@@ -31,4 +31,15 @@ export const handlers = [
       ])
     );
   }),
+  rest.get("/next-todo", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        id: 4,
+        username: "keeper",
+        title: "다음달 독서",
+        content: "다음달에 독서왕",
+      })
+    );
+  }),
 ];
