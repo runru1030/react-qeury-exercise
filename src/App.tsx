@@ -1,4 +1,5 @@
 import React from "react";
+import UseQueriesBlock from "./components/UseQueriesBlock/UseQeuriesBlock";
 import UseQueryBlock from "./components/UseQueryBlock/UseQueryBlock";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <UseQueryBlock />
+      <UseQueriesBlock />
     </div>
   );
 }
