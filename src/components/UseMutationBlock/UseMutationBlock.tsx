@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 
 const postTodo = (todo: Todo) => {
   return axios.post("/todos", { todo });
@@ -10,6 +10,7 @@ interface Todo {
   content: string;
 }
 const UseMutationBlock = () => {
+  const queryClient = useQueryClient();
   const postingMutation = useMutation(postTodo, {
     onMutate: (variable) => {
       console.log("onMutate", variable);
@@ -18,6 +19,7 @@ const UseMutationBlock = () => {
       // error
     },
     onSuccess: (data, variables, context) => {
+      queryClient.invalidateQueries("todos");
       console.log("success", data, variables, context);
     },
     onSettled: () => {
