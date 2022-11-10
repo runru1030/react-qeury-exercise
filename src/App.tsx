@@ -1,14 +1,9 @@
 import React from "react";
+import UseMutationBlock from "./components/UseMutationBlock/UseMutationBlock";
 import UseQueriesBlock from "./components/UseQueriesBlock/UseQeuriesBlock";
 import UseQueryBlock from "./components/UseQueryBlock/UseQueryBlock";
 
 function App() {
-  //useQuery
-  //useQuery 동기적으로 실행
-
-  //useQueries
-  //unique key 활용
-
   //QueryCache
 
   //useMutation
@@ -17,6 +12,7 @@ function App() {
     <div className="App">
       <UseQueryBlock />
       <UseQueriesBlock />
+      <UseMutationBlock />
     </div>
   );
 }
